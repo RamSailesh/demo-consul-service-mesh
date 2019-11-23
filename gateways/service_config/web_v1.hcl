@@ -16,6 +16,10 @@ service {
 
       proxy {
         upstreams {
+	  mesh_gateway {
+               mode = "local"
+            }
+          datacenter = "dc2"
           destination_name = "payments"
           local_bind_address = "127.0.0.1"
           local_bind_port = 9091
