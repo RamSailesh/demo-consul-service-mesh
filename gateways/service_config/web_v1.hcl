@@ -17,6 +17,9 @@ service {
 
       proxy {
         upstreams {
+          mesh_gateway {
+               mode = "local"
+            }
           destination_type = "prepared_query"
 	        destination_name = "payments-preparedquery"
           local_bind_address = "127.0.0.1"
