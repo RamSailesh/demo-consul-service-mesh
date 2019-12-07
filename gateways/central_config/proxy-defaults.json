@@ -1,0 +1,9 @@
+{
+  "Kind": "proxy-defaults",
+  "MeshGateway": [
+    {
+      "Mode": "local"
+    }
+  ],
+  "Name": "global"
+}
