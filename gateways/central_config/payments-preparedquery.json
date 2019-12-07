@@ -1,0 +1,10 @@
+{
+  "Name": "payments-preparedquery",
+  "Service": {
+    "Service": "payments",
+    "Failover": {
+      "Datacenters": ["dc3", "dc2"]
+    },
+    "Connect":true
+  }
+}

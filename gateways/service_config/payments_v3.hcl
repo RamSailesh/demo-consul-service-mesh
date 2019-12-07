@@ -1,22 +1,22 @@
 service {
   name = "payments"
-  id = "payments-v2"
-  address = "10.6.0.3"
-  port = 9092
+  id = "payments-v3"
+  address = "10.7.0.3"
+  port = 9093
   
-  tags      = ["v2"]
+  tags      = ["v3"]
   meta      = {
-    version = "2"
+    version = "3"
   }
 
    connect { 
     sidecar_service {
-      port = 20002
+      port = 20003
       check {
        name = "Connect Envoy Sidecar"
-       tcp = "10.6.0.3:20002"
+       tcp = "10.7.0.3:20003"
        interval ="10s"
-      }  
+    }  
   }
-}
+  }
 }

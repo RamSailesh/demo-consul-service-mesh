@@ -6,22 +6,19 @@ service {
   
   connect { 
     sidecar_service {
-      port = 20000
-      
+      port = 20009
+
       check {
-        name = "Connect Envoy Sidecar"
-        tcp = "10.5.0.3:20000"
-        interval ="10s"
+       name = "Connect Envoy Sidecar"
+       tcp = "10.5.0.3:20009"
+       interval ="10s"
       }
+     
 
       proxy {
-        mesh_gateway {
-               mode = "local"
-            }
         upstreams {
-	  
-          datacenter = "dc2"
-          destination_name = "payments"
+          destination_type = "prepared_query"
+	        destination_name = "payments-preparedquery"
           local_bind_address = "127.0.0.1"
           local_bind_port = 9091
         }
